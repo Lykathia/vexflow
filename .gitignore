@@ -6,6 +6,7 @@ docs/docco.css
 !docs/index.html
 npm-debug.log
 vexflow
+.npm
 
 #eclipse
 .project
