@@ -460,7 +460,7 @@ Vex.Flow.DocumentFormatter.Liquid.prototype.getBlock = function(b) {
 
   // Update modifiers for first measure
   this.document.getMeasure(startMeasure).getStaves().forEach(function(s) {
-    console.log(s);
+    //console.log(s);
 
     if (typeof s.clef == "string" && ! s.getModifier("clef")) {
       s.addModifier({type: "clef", clef: s.clef, automatic: true});
