@@ -583,7 +583,6 @@ Vex.Flow.DocumentFormatter.Liquid.prototype.draw = function(elem, options) {
     this.canvases = [];
   }
 
-  //var canvasWidth = $(elem).width() - 10; // TODO: remove jQuery dependency
   var canvasWidth = elem.offsetWidth - 10; 
 
   var renderWidth = Math.floor(canvasWidth / this.zoom);
@@ -597,8 +596,12 @@ Vex.Flow.DocumentFormatter.Liquid.prototype.draw = function(elem, options) {
   this.measureWidth = [];
   this.setWidth(renderWidth);
 
-  // Remove all non-canvas child nodes of elem using jQuery
-  $(elem).children(":not(canvas)").remove();
+  // Remove all non-canvas child nodes of elememt
+  elems = elem.querySelectorAll(":not(canvas)");
+  Array.prototype.forEach.call(elems, function(node) {
+    node.parentNode.removeChild(node);
+  });
+
 
   var b = 0;
   while (this.getBlock(b)) {
