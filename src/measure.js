@@ -224,7 +224,7 @@ Vex.Flow.Measure.Voice = function(object) {
     throw new Vex.RERR("ArgumentError",
               "Constructor requires nonzero num_beats and beat_value");
   this.time = Vex.Merge({}, object.time);
-  this.key = (typeof object.key == "string") ? object.key : null;
+  this.key = (typeof object.key == "string") ? object.key : "C";
   this.notes = new Array();
   if (object.notes instanceof Array)
     object.notes.forEach(function(note) {
